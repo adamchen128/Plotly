@@ -1,0 +1,19 @@
+---
+title: "plotly Exercise"
+author: "Adam yao Guang Chen"
+date: "19 March 2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is an exercise of plotly. The X axis is for weights. The y axis is for miles per gallon. The number of cylinders are in different colors.  The circle size represents different horse power.
+
+```{r pressure, echo=FALSE}
+library(plotly)
+plot_ly(mtcars, x = mtcars$wt, y = mtcars$mpg, mode = "markers", color = as.factor(mtcars$cyl), size = mtcars$hp)
+```
