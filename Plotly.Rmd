@@ -1,0 +1,23 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "Adam Yao Guang Chen"
+date: "16 Apil 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This is an exercise of plotly. The X axis is for weight in thousand ponds. The y axis is for miles per gallon. The number of cylinders are in different colors. The circle size represents different horse power.
+
+The car weights and its fuel effenciency are in negative corelation.
+
+## Car Weights VS MPG
+```{r, warning = FALSE, message = FALSE, results = "hold", echo = FALSE}
+suppressPackageStartupMessages(library(plotly))
+
+plot_ly(mtcars, x = mtcars$wt, y = mtcars$mpg, mode = "markers", color = as.factor(mtcars$cyl), size = mtcars$hp)
+```
